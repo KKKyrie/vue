@@ -16,13 +16,13 @@ Vue.js is an MIT-licensed open source project. And this README is created by <a 
   
   
 # Catalogs
-- scripts -------------------- building stuff, can be ignored
-- dist ----------------------- the result after building
-- examples ------------------- like it was called, examples
-- flow ----------------------- make javascript stronger and more strict
-- packages ------------------- store the packages which can be released independently
-- test ----------------------- testing files
-- src ------------------------ **source code**
+- scripts: building stuff, can be ignored
+- dist: the result after building
+- examples: like it was called, examples
+- flow: make javascript stronger and more strict
+- packages: store the packages which can be released independently
+- test: testing files
+- src: **source code**
 - package.json
 - yarn.lock
 - .editorconfig
@@ -34,10 +34,10 @@ Vue.js is an MIT-licensed open source project. And this README is created by <a 
   
   
 # Catalogs of src
-- compiler ------------------ compiling code, compile the templete to render function
-- core ---------------------- core!
-- server -------------------- server-side rendering
-- platforms ----------------- web and weex
-- sfc ----------------------- Single Flie Component
-- shared -------------------- utility functions (worth reading too)  
+- compiler: compiling code, compile the templete to render function
+- core: **core!**
+- server: server-side rendering
+- platforms: web and weex
+- sfc: Single Flie Component
+- shared: utility functions (worth reading too)  
   
