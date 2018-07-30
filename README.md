@@ -30,4 +30,14 @@ Vue.js is an MIT-licensed open source project. And this README is created by <a 
 - .babelrc
 - .eslintrc
 - .eslintignore
-- .gitignore
+- .gitignore  
+  
+  
+# Catalogs of src
+- compiler ------------------ compiling code, compile the templete to render function
+- core ---------------------- core!
+- server -------------------- server-side rendering
+- platforms ----------------- web and weex
+- sfc ----------------------- Single Flie Component
+- shared -------------------- utility functions (worth reading too)  
+  
