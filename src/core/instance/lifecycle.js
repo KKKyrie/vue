@@ -170,11 +170,13 @@ export function mountComponent (
 
       mark(startTag)
       const vnode = vm._render()
+      // vm._render() is to execute the vm.$options.render function, and get a virtual node(vnode).
       mark(endTag)
       measure(`vue ${name} render`, startTag, endTag)
 
       mark(startTag)
       vm._update(vnode, hydrating)
+      // vm._update() is to render the vnode into a real DOM element.
       mark(endTag)
       measure(`vue ${name} patch`, startTag, endTag)
     }
