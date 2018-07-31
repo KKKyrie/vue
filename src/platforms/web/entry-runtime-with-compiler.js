@@ -32,10 +32,12 @@ Vue.prototype.$mount = function (
   const options = this.$options
   // resolve template/el and convert to render function
   if (!options.render) {
+    // if render function doesn't exist, use 'template' or 'el' to create render function
     let template = options.template
     if (template) {
       if (typeof template === 'string') {
         if (template.charAt(0) === '#') {
+          // template is an id of a DOM element
           template = idToTemplate(template)
           /* istanbul ignore if */
           if (process.env.NODE_ENV !== 'production' && !template) {
@@ -48,14 +50,18 @@ Vue.prototype.$mount = function (
       } else if (template.nodeType) {
         template = template.innerHTML
       } else {
+        // template is neither string(id of DOM element) nor DOM element
         if (process.env.NODE_ENV !== 'production') {
           warn('invalid template option:' + template, this)
         }
         return this
       }
     } else if (el) {
+      // no template but el, obtain the html string(template) of element
       template = getOuterHTML(el)
     }
+
+    // here, ideally, template is a string of html
     if (template) {
       /* istanbul ignore if */
       if (process.env.NODE_ENV !== 'production' && config.performance && mark) {
