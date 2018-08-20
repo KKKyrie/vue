@@ -211,6 +211,8 @@ export function set (target: Array<any> | Object, key: any, val: any): any {
     target[key] = val
     return val
   }
+
+  // if run here: defining a new property on target @kyrieliu
   const ob = (target: any).__ob__
   if (target._isVue || (ob && ob.vmCount)) {
     process.env.NODE_ENV !== 'production' && warn(
@@ -220,6 +222,7 @@ export function set (target: Array<any> | Object, key: any, val: any): any {
     return val
   }
   if (!ob) {
+    // if ob doesn't exist, aka: target is not reactive @kyrieliu
     target[key] = val
     return val
   }
