@@ -44,8 +44,8 @@ export default class Watcher {
 
   constructor (
     vm: Component,
-    expOrFn: string | Function,
-    cb: Function,
+    expOrFn: string | Function, // watching target
+    cb: Function, // when expOrFn changed, execute this callback function
     options?: ?Object,
     isRenderWatcher?: boolean
   ) {
@@ -56,11 +56,11 @@ export default class Watcher {
     vm._watchers.push(this)
     // options
     if (options) {
-      this.deep = !!options.deep
-      this.user = !!options.user
-      this.computed = !!options.computed
-      this.sync = !!options.sync
-      this.before = options.before
+      this.deep = !!options.deep // deep observation?
+      this.user = !!options.user // is current wathcers belongs to developer?
+      this.computed = !!options.computed // is watcher of computed prop?
+      this.sync = !!options.sync // sync or async?
+      this.before = options.before // the pre-callback before each update
     } else {
       this.deep = this.user = this.computed = this.sync = false
     }
